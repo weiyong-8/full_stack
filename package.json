@@ -2,6 +2,12 @@
   "name": "full_stack",
   "version": "1.0.0",
   "description": "全栈项目 测试一下",
+  "scripts": {
+    "lint": "eslint --quiet --ext js,vue .",
+    "dev": "_ENV=local nodemon ./index.js",
+    "beta":"_ENV=beta node ./index.js",
+    "prod":"_ENV=production node ./index.js"
+  },
   "homepage": "https://github.com/weiyong-8/full_stack#readme",
   "bugs": {
     "url": "https://github.com/weiyong-8/full_stack/issues"
@@ -14,9 +20,7 @@
   "author": "",
   "type": "commonjs",
   "main": "index.js",
-  "scripts": {
-    "lint": "eslint --quiet --ext js,vue ."
-  },
+  
 
   "dependencies": {
     "@babel/core": "^7.24.0",
