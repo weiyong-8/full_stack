@@ -29,7 +29,7 @@ module.exports = (app) => {
   const middlewares = {};
   fileList.forEach((file) => {
     //提取文件名称
-    let name = path.relative(file);
+    let name = path.resolve(file);
 
     // 截取路径 app/middlewares/custom-module/custom-middleware.js => custom-module/custom-middleware
     name = name.substring(

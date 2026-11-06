@@ -24,12 +24,11 @@ module.exports = (app) => {
   const fileList = glob.sync(
     path.resolve(controllerPath, `.${sep}**${sep}**.js`),
   );
-
   //遍历所有文件目录，把内容加载到 app.controller 下
   const controller = {};
   fileList.forEach((file) => {
     //提取文件名称
-    let name = path.relative(file);
+    let name = path.resolve(file);
 
     // 截取路径 app/controller/custom-module/custom-controller.js => custom-module/custom-controller
     name = name.substring(
@@ -57,6 +56,5 @@ module.exports = (app) => {
       }
     }
   });
-
   app.controller = controller;
 };

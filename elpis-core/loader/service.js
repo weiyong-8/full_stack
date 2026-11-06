@@ -27,7 +27,7 @@ module.exports = (app) => {
   const service = {};
   fileList.forEach((file) => {
     //提取文件名称
-    let name = path.relative(file);
+    let name = path.resolve(file);
 
     // 截取路径 app/service/custom-module/custom-service.js => custom-module/custom-service
     name = name.substring(

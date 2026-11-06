@@ -24,7 +24,7 @@ module.exports = (app) => {
   //遍历所有文件目录，把内容加载到 app.extend 下
   fileList.forEach((file) => {
     //提取文件名称
-    let name = path.relative(file);
+    let name = path.resolve(file);
 
     // 截取路径 app/extend/custom-extend.js => custom-extend
     name = name.substring(
